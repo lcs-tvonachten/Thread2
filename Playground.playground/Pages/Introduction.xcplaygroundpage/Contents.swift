@@ -7,8 +7,8 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 10 and 11.
  */
-let preferredWidth = 300
-let preferredHeight = 600
+let preferredWidth = 500
+let preferredHeight = 500
 /*:
  ## Required code
  
@@ -25,18 +25,144 @@ let canvas = Canvas(width: preferredWidth, height: preferredHeight)
 
 // Show the canvas in the playground's live view
 PlaygroundPage.current.liveView = canvas
-/*:
- ## Add your code
- 
- Beginning on line 38, write a meaningful comment.
- 
- You can remove the code on line 39 and begin writing your own code.
- 
- [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
- */
 
-// Replace this comment with your first comment – what is the goal of the code you're about to write?
-canvas.drawRectangle(at: Point(x: 50, y: 75), width: 100, height: 200)
+//Draw the grid
+canvas.drawAxes(withScale: true, by: 25, color: .black)
+canvas.highPerformance = false
+
+//Draw sunset sky (purple- blue)
+canvas.drawShapesWithFill = true
+let purple = Color(hue: 277, saturation: 95, brightness: 56, alpha: 100)
+canvas.fillColor = purple
+canvas.drawRectangle(at: Point(x: 0, y: 400), width: 500, height: 100)
+
+canvas.drawShapesWithFill = true
+let pink = Color(hue: 297, saturation: 95, brightness: 56, alpha: 100)
+canvas.fillColor = pink
+canvas.drawRectangle(at: Point(x: 0, y: 300), width: 500, height: 100)
+
+canvas.drawShapesWithFill = true
+let pinkred = Color(hue: 332, saturation: 95, brightness: 65, alpha: 100)
+canvas.fillColor = pinkred
+canvas.drawRectangle(at: Point(x: 0, y: 250), width: 500, height: 50)
+
+canvas.drawShapesWithFill = true
+let red = Color(hue: 9, saturation: 95, brightness: 78, alpha: 100)
+canvas.fillColor = red
+canvas.drawRectangle(at: Point(x: 0, y: 175), width: 500, height: 75)
+
+canvas.drawShapesWithFill = true
+let orange = Color(hue: 21, saturation: 95, brightness: 89, alpha: 100)
+canvas.fillColor = orange
+canvas.drawRectangle(at: Point(x: 0, y: 100), width: 500, height: 75)
+
+canvas.drawShapesWithFill = true
+let orangeyellow = Color(hue: 36, saturation: 100, brightness: 100, alpha: 100)
+canvas.fillColor = orangeyellow
+canvas.drawRectangle(at: Point(x: 0, y: 50), width: 500, height: 50)
+
+canvas.drawShapesWithFill = true
+let yellow = Color(hue: 48, saturation: 95, brightness: 100, alpha: 100)
+canvas.fillColor = yellow
+canvas.drawRectangle(at: Point(x: 0, y: 0), width: 500, height: 50)
+
+
+//Draw pandas ears
+canvas.drawShapesWithFill  = true
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: 220, y: 405), width: 65, height: 55)
+
+canvas.drawShapesWithFill = true
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: 380, y: 405), width: 65, height: 55)
+
+//Draw Pandas legs (left)
+canvas.drawShapesWithFill = true
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: 270, y: 170), width: 50, height: 100)
+
+//Draw Pandas foot(left)
+canvas.drawShapesWithFill = true
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: 260, y: 132), width: 50, height: 30)
+
+
+
+
+
+
+//Draw pandas body
+canvas.drawShapesWithFill = true
+canvas.fillColor = .white
+canvas.drawEllipse(at: Point(x: 300, y: 245), width: 160, height: 170)
+
+
+// Draw pandas head
+canvas.drawShapesWithFill = true
+canvas.fillColor = .white
+canvas.drawEllipse(at: Point(x: 300, y: 350), width: 200, height: 160)
+
+// Draw pandas cheeks
+canvas.drawShapesWithFill = true
+let lightpink = Color(hue: 323, saturation: 33, brightness: 98, alpha: 100)
+canvas.fillColor = lightpink
+canvas.drawEllipse(at: Point(x: 250, y: 310), width: 30, height: 15)
+
+canvas.drawShapesWithFill = true
+let brightpink = Color(hue: 323, saturation: 33, brightness: 98, alpha: 100)
+canvas.fillColor = brightpink
+canvas.drawEllipse(at: Point(x: 350, y: 310), width: 30, height: 15)
+
+// Draw pandas eyes
+canvas.drawShapesWithFill = true
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: 260, y: 375), width: 40, height: 50)
+
+// Draw pandas eyes
+canvas.drawShapesWithFill = true
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: 335, y: 375), width: 40, height: 50)
+
+// Draw pandas pupills
+canvas.drawShapesWithFill = true
+canvas.fillColor = .white
+canvas.drawEllipse(at: Point(x: 335, y: 380), width: 10, height: 15)
+
+// Draw pandas pupills
+canvas.drawShapesWithFill = true
+canvas.fillColor = .white
+canvas.drawEllipse(at: Point(x: 260, y: 380), width: 10, height: 15)
+
+// Draw nose strings
+canvas.drawShapesWithFill = true
+canvas.fillColor = .white
+canvas.defaultBorderWidth = 4
+canvas.drawEllipse(at: Point(x: 292, y: 335), width: 20, height: 30)
+
+// Draw nose strings
+canvas.drawShapesWithFill = true
+canvas.fillColor = .white
+canvas.defaultBorderWidth = 4
+canvas.drawEllipse(at: Point(x: 310, y: 335), width: 20, height: 30)
+
+// over lapping left
+canvas.drawShapesWithFill = true
+canvas.fillColor = .white
+canvas.borderColor = .white
+canvas.drawEllipse(at: Point(x: 285, y: 340), width: 40, height: 25)
+
+//over lapping right
+canvas.drawShapesWithFill = true
+canvas.fillColor = .white
+canvas.borderColor = .white
+canvas.drawEllipse(at: Point(x: 310, y: 340), width: 40, height: 25)
+
+
+// Draw pandas nose
+canvas.drawShapesWithFill = true
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: 300, y: 335), width: 30, height: 15)
+
 
 /*:
  ## Show the Assistant Editor

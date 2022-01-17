@@ -86,15 +86,65 @@ canvas.drawShapesWithFill = true
 canvas.fillColor = .black
 canvas.drawEllipse(at: Point(x: 260, y: 132), width: 50, height: 30)
 
+//Draw Pandas legs (right)
+canvas.drawShapesWithFill = true
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: 365, y: 180), width: 100, height: 40)
 
-
-
-
+//Draw pandas foot(right)
+canvas.drawShapesWithFill = true
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: 402, y: 190), width: 32, height: 45)
 
 //Draw pandas body
 canvas.drawShapesWithFill = true
 canvas.fillColor = .white
 canvas.drawEllipse(at: Point(x: 300, y: 245), width: 160, height: 170)
+
+//Draw pandas arm (left)
+canvas.drawShapesWithFill = true
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: 230, y: 280), width: 120, height: 45)
+
+//Draw pandas hand (left)
+canvas.drawShapesWithFill = true
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: 182, y: 288), width: 34, height: 45)
+
+//Draw pandas arm (right)
+canvas.drawShapesWithFill = true
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: 368, y: 280), width: 120, height: 45)
+
+//Draw pandas hand (right)
+canvas.drawShapesWithFill = true
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: 417, y: 287), width: 34, height: 45)
+
+// Draw pandas Paws
+canvas.drawShapesWithFill = true
+let lightyellow = Color(hue: 45, saturation: 23, brightness: 100, alpha: 100)
+canvas.fillColor = lightyellow
+canvas.drawEllipse(at: Point(x: 181, y: 280), width: 17, height: 15)
+
+canvas.drawShapesWithFill = true
+let Brightyellow = Color(hue: 45, saturation: 23, brightness: 100, alpha: 100)
+canvas.fillColor = Brightyellow
+canvas.drawEllipse(at: Point(x: 173, y: 293), width: 8, height: 10)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Draw pandas head

@@ -121,7 +121,7 @@ canvas.drawShapesWithFill = true
 canvas.fillColor = .black
 canvas.drawEllipse(at: Point(x: 417, y: 287), width: 34, height: 45)
 
-// Draw pandas Paws
+// Draw pandas Paws left
 canvas.drawShapesWithFill = true
 let lightyellow = Color(hue: 45, saturation: 23, brightness: 100, alpha: 100)
 canvas.fillColor = lightyellow
@@ -132,19 +132,37 @@ let Brightyellow = Color(hue: 45, saturation: 23, brightness: 100, alpha: 100)
 canvas.fillColor = Brightyellow
 canvas.drawEllipse(at: Point(x: 173, y: 293), width: 8, height: 10)
 
+canvas.drawShapesWithFill = true
+let Yellow = Color(hue: 45, saturation: 23, brightness: 100, alpha: 100)
+canvas.fillColor = Yellow
+canvas.drawEllipse(at: Point(x: 182, y: 295), width: 8, height: 10)
+
+canvas.drawShapesWithFill = true
+let Ellow = Color(hue: 45, saturation: 23, brightness: 100, alpha: 100)
+canvas.fillColor = Ellow
+canvas.drawEllipse(at: Point(x: 191, y: 293), width: 8, height: 10)
 
 
+// Draw pandas Paws right
+canvas.drawShapesWithFill = true
+let Lightyellow = Color(hue: 45, saturation: 23, brightness: 100, alpha: 100)
+canvas.fillColor = Lightyellow
+canvas.drawEllipse(at: Point(x: 418, y: 280), width: 17, height: 15)
 
+canvas.drawShapesWithFill = true
+let brightyellow = Color(hue: 45, saturation: 23, brightness: 100, alpha: 100)
+canvas.fillColor = brightyellow
+canvas.drawEllipse(at: Point(x: 426, y: 293), width: 8, height: 10)
 
+canvas.drawShapesWithFill = true
+let ellow = Color(hue: 45, saturation: 23, brightness: 100, alpha: 100)
+canvas.fillColor = ellow
+canvas.drawEllipse(at: Point(x: 417, y: 295), width: 8, height: 10)
 
-
-
-
-
-
-
-
-
+canvas.drawShapesWithFill = true
+let Eellow = Color(hue: 45, saturation: 23, brightness: 100, alpha: 100)
+canvas.fillColor = Eellow
+canvas.drawEllipse(at: Point(x: 408, y: 292), width: 8, height: 10)
 
 
 // Draw pandas head

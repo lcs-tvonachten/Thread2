@@ -4,7 +4,7 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
-let preferredWidth = 600
+let preferredWidth = 400
 let preferredHeight = 600
 /*:
  ## Required code
@@ -16,6 +16,7 @@ let preferredHeight = 600
 import Cocoa
 import PlaygroundSupport
 import CanvasGraphics
+import CoreText
 
 // Create canvas
 let canvas = Canvas(width: preferredWidth, height: preferredHeight)
@@ -40,18 +41,80 @@ PlaygroundPage.current.liveView = canvas
 //                           y: canvas.height / 2))
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+canvas.drawAxes(withScale: true, by: 50, color: .black)
 
-/*:
- ## Add your code
- 
- Beginning on line 61, you can add your own code.
-  
- [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
-
- */
 
 // Begin writing your code below (you can remove the examples shown)
+
+canvas.highPerformance = true
+
+// the code white circle
+
+    // rectangle
+
+canvas.fillColor = Color(hue: 193, saturation: 99, brightness: 86, alpha: 100)
+
+
+
+canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
+
+canvas.drawAxes(withScale: true, by: 50, color: .black)
+
+canvas.drawShapesWithFill = false
+
+canvas.drawShapesWithBorders = true
+
+//customize the borders
+
+canvas.defaultBorderWidth = 12
+
+canvas.borderColor = .white
+
+// draw the circles
+
+
+
+for whiteCircle in stride(from: 0, through: 400, by: 50){
+
+    canvas.drawEllipse(at: Point(x: 200, y: 400), width: whiteCircle  , height: whiteCircle )
+
+}
+
+//draw pink circle
+
+canvas.borderColor = Color(hue: 312, saturation: 63, brightness: 66, alpha: 100)
+
+for pinkCircle in stride(from: 0, through: 400, by: 50){
+
+    canvas.drawEllipse(at: Point(x: 200, y: 500), width: pinkCircle , height: pinkCircle )
+
+    
+
+}
+
+canvas.drawText(message: "superdrag", at: Point(x: 25, y: 85), size: 40)
+
+canvas.drawText(message: "with", at: Point(x: 20, y: 44), size: 10)
+
+canvas.drawText(message: "the shambles", at: Point(x: 20, y: 30), size: 10)
+
+canvas.drawText(message: "and lifter", at: Point(x: 20, y: 16), size: 10)
+
+canvas.drawText(message: "thursday", at: Point(x:105, y: 44), size: 10)
+
+canvas.drawText(message: "june 13 1996 / 8:30", at: Point(x: 105, y: 30), size: 10)
+
+canvas.drawText(message: "no age limit", at: Point(x: 105, y: 16), size: 10)
+
+canvas.drawText(message: "at brick by brick", at: Point(x:300, y: 44), size: 10)
+
+canvas.drawText(message: "1130 buenos avenue", at: Point(x: 300, y: 30), size: 10)
+
+canvas.drawText(message: "san diego, ca", at: Point(x: 300, y: 16), size: 10)
+
+
+
+canvas.highPerformance = false
 
 
 

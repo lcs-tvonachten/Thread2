@@ -57,6 +57,7 @@ canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 400)
 
 // Draw a grid of circles
 canvas.textColor = .black
+canvas.highPerformance = true
 for xPosition in stride(from: 0, through: 400, by: 40) {
     for yPosition in stride(from: 0, through: 400, by: 40) {
         
@@ -79,21 +80,16 @@ for xPosition in stride(from: 0, through: 400, by: 40) {
 
     }
 }
-        
-canvas.drawText(message: "pixies", at: Point(x: 20, y: 420), size: 65)
-canvas.drawText(message: "saturday", at: Point(x: 20, y: 550), size: 30)
-/*:
- ## Show the Live View
- Don't see any results?
- 
- Remember to show the Live View (1 then 2):
- 
- ![timeline](timeline.png "Timeline")
+canvas.highPerformance = false
 
- ## Use source control
- To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
- 
- Please commit and push your work often.
- 
- ![source_control](source-control.png "Source Control")
- */
+        
+canvas.drawText(message: "pixies", at: Point(x: 20, y: 415), size: 65)
+canvas.drawText(message: "saturday", at: Point(x: 20, y: 550), size: 10)
+canvas.drawText(message: "december 13 1986", at: Point(x: 20, y: 535), size: 10)
+canvas.drawText(message: "9 pm over 21", at: Point(x: 20, y: 520), size: 10)
+canvas.drawText(message: "at the rat", at: Point(x: 280, y: 550), size: 10)
+canvas.drawText(message: "528 commonwealth", at: Point(x: 280, y: 535), size: 10)
+canvas.drawText(message: "boston, mass.", at: Point(x: 280, y: 520), size: 10)
+
+canvas.textColor = .white
+canvas.drawText(message: "with", at: Point(x: 280, y: 460), size: 15)

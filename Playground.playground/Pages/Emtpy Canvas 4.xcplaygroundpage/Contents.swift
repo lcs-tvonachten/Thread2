@@ -45,10 +45,31 @@ let orange = Color(hue: 17, saturation: 95, brightness: 95, alpha: 100)
 canvas.fillColor = orange
 canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
 
-canvas.drawText(message: "talking heads", at: Point(x: 20, y: 175), size: 45, kerning: 0.0)
-canvas.drawText(message: "friday, saturday, sunday", at: Point(x: 20, y: 40), size: 10, kerning: 0.0)
-canvas.drawText(message: "september 12, 13, 14, 1975", at: Point(x: 20, y: 20), size: 10, kerning: 0.0)
-canvas.drawText(message: "at cbgb and omfug", at: Point(x: 185, y: 40), size: 10, kerning: 0.0)
+//Change colour
+canvas.drawShapesWithFill = true
+let DifWhite = Color(hue: 79, saturation: 5, brightness: 88, alpha: 100)
+canvas.fillColor = DifWhite
+
+// Express the vertices of the custom figure
+var figureVertices: [Point] = []
+figureVertices.append(Point(x: 0, y: 200))
+figureVertices.append(Point(x: 44.44, y: 200))
+figureVertices.append(Point(x: 44.44, y: 244.44))
+
+//Draw a single figure
+canvas.drawCustomShape(with: figureVertices)
+                    
+
+// Lettering - colour
+let difWhite = Color(hue: 79, saturation: 5, brightness: 88, alpha: 100)
+canvas.textColor = difWhite
+canvas.drawText(message: "talking heads", at: Point(x: 20, y: 175), size: 45, kerning: -0.5)
+canvas.drawText(message: "friday, saturday, sunday", at: Point(x: 20, y: 40), size: 10, kerning: -0.5)
+canvas.drawText(message: "september 12, 13, 14, 1975", at: Point(x: 20, y: 20), size: 10, kerning: -0.5)
+canvas.drawText(message: "at cbgb and omfug", at: Point(x: 160, y: 40), size: 10, kerning: -0.5)
+canvas.drawText(message: "315 bowery, new york city", at: Point(x: 160, y: 20), size: 10, kerning: -0.5)
+canvas.drawText(message: "also appearing", at: Point(x: 280, y: 40), size: 10, kerning: -0.5)
+canvas.drawText(message: "from brooklyn, the shirts", at: Point(x: 280, y: 20), size: 10, kerning: -0.5)
 /*:
  ## Show the Live View
  Don't see any results?

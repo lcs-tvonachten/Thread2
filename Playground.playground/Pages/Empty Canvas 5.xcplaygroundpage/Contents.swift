@@ -29,16 +29,6 @@ let p = Pen(drawingUpon: canvas)
 // Show the canvas in the playground's live view
 PlaygroundPage.current.liveView = canvas
 
-/*:
- ## Optional code
- 
- Below are two generally helpful configurations.
- 
- If you do not wish to work in all four quadrants of the Cartesian plane, comment out the code on line 44.
- 
- If you do not wish to see a grid, comment out the code on line 48.
- 
- */
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
 canvas.translate(to: Point(x: canvas.width / 2,

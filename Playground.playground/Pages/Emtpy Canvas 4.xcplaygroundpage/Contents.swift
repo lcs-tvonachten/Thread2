@@ -47,23 +47,33 @@ canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
 
 //Change colour
 canvas.drawShapesWithFill = true
+canvas.drawShapesWithBorders = false
 let DifWhite = Color(hue: 79, saturation: 5, brightness: 88, alpha: 100)
 canvas.fillColor = DifWhite
 
-// Express the vertices of the custom figure
-var figureVertices: [Point] = []
-figureVertices.append(Point(x: 0, y: 200))
-figureVertices.append(Point(x: 44.44, y: 200))
-figureVertices.append(Point(x: 44.44, y: 244.44))
+//Express the pattern of the grid
 
-//Draw a single figure
-canvas.drawCustomShape(with: figureVertices)
-                    
+for xPosition in stride(from: 0, through: 400, by: 44.44) {
+    for yPosition in stride(from: 0, through: 600, by: 44.44) {
+        // Express the vertices of the custom figure
+        var figureVertices: [Point] = []
+        figureVertices.append(Point(x: xPosition + 0, y: yPosition + 200))
+        figureVertices.append(Point(x: xPosition + 44.44, y: yPosition + 200))
+        figureVertices.append(Point(x: xPosition + 44.44, y: yPosition + 244.44))
+
+        //Draw a single figure
+        canvas.drawCustomShape(with: figureVertices)
+
+    }
+}
+        
+
+
 
 // Lettering - colour
 let difWhite = Color(hue: 79, saturation: 5, brightness: 88, alpha: 100)
 canvas.textColor = difWhite
-canvas.drawText(message: "talking heads", at: Point(x: 20, y: 175), size: 45, kerning: -0.5)
+canvas.drawText(message: "talking heads", at: Point(x: 20, y: 140), size: 40, kerning: -0.5)
 canvas.drawText(message: "friday, saturday, sunday", at: Point(x: 20, y: 40), size: 10, kerning: -0.5)
 canvas.drawText(message: "september 12, 13, 14, 1975", at: Point(x: 20, y: 20), size: 10, kerning: -0.5)
 canvas.drawText(message: "at cbgb and omfug", at: Point(x: 160, y: 40), size: 10, kerning: -0.5)

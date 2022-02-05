@@ -29,7 +29,6 @@ let p = Pen(drawingUpon: canvas)
 // Show the canvas in the playground's live view
 PlaygroundPage.current.liveView = canvas
 
-
 // Show a grid
 canvas.drawAxes(withScale: true, by: 20, color: .black)
 
@@ -163,10 +162,11 @@ canvas.drawRectangle(at: Point(x: 390, y: 0), width: 10, height: 10)
 // Circles in a row
 
 canvas.highPerformance = true
-for xPosition in stride(from: 0, through: 400, by: 40) {
+for xPosition in stride(from: 0, through: 200, by: 40) {
+    if xPosition.isMultiple(of: 80){
+      
 
-// Draw the circle
-
+    // Draw the circle
 canvas.drawEllipse(at: Point(x: xPosition,
                                      y: 420),
                            width: 40, height: 40)
@@ -201,3 +201,4 @@ canvas.drawAxes(withScale: true, by: 20, color: .blue)
  
  ![source_control](source-control.png "Source Control")
  */
+}

@@ -76,7 +76,21 @@ let pink = Color(hue: 351, saturation: value/2, brightness: 100, alpha: 100)
     
     
 }
-        
+// Drawing gradient
+for value in stride(from: 0, through: 200, by: 1){
+// Set the color
+let pink = Color(hue: 351, saturation: value/2, brightness: 100, alpha: 100)
+    
+    canvas.drawShapesWithFill = false
+    canvas.drawShapesWithBorders = true
+    canvas.borderColor = pink
+    
+
+// Draw Circles
+    canvas.drawEllipse(at: Point(x: 300, y: 300), width:value , height:value  )
+    
+    
+}
 
 // Drawing squares
 
@@ -146,7 +160,17 @@ for blackrectangle in stride(from: 0, through: 400, by: 160){
 canvas.drawRectangle(at: Point(x: 390, y: 0), width: 10, height: 10)
 
 
+// Circles in a row
 
+canvas.highPerformance = true
+for xPosition in stride(from: 0, through: 400, by: 40) {
+
+// Draw the circle
+
+canvas.drawEllipse(at: Point(x: xPosition,
+                                     y: 420),
+                           width: 40, height: 40)
+}
 
 // Lettering
 let lightblue = Color(hue: 214, saturation: 21, brightness: 97, alpha: 100)

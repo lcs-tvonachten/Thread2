@@ -22,7 +22,7 @@ let canvas = Canvas(width: preferredWidth, height: preferredHeight)
 
 // Create a turtle that can draw upon the canvas
 let turtle = Tortoise(drawingUpon: canvas)
-
+ 
 // Create a pen that can draw upon the canvas
 let p = Pen(drawingUpon: canvas)
 
@@ -161,22 +161,20 @@ canvas.drawRectangle(at: Point(x: 390, y: 0), width: 10, height: 10)
 
 // Circles in a row
 
-canvas.highPerformance = true
+// Draw the circle
+canvas.drawShapesWithFill = true
+canvas.drawShapesWithBorders = false
 for xPosition in stride(from: 0, through: 200, by: 40) {
-    if xPosition.isMultiple(of: 80){
+canvas.drawEllipse(at: Point(x: xPosition,y: 420),
+    width: 20, height: 20)
       
-
-    // Draw the circle
-canvas.drawEllipse(at: Point(x: xPosition,
-                                     y: 420),
-                           width: 40, height: 40)
 }
 
 // Lettering
 let lightblue = Color(hue: 214, saturation: 21, brightness: 97, alpha: 100)
 canvas.textColor = lightblue
-canvas.drawText(message: "One Direction ", at: Point(x: 30, y: 450), size: 40, kerning: 0)
-canvas.drawText(message: "On The Road Again", at: Point(x: 200, y: 430), size: 20, kerning: 0)
+canvas.drawText(message: "One Direction ", at: Point(x: 30, y: 460), size: 40, kerning: 0)
+canvas.drawText(message: "On The Road Again", at: Point(x: 200, y: 440), size: 20, kerning: 0)
 canvas.drawText(message: "thursday", at: Point(x: 40, y: 555), size: 10, kerning: 0)
 canvas.drawText(message: "september 1, 2015", at: Point(x: 30, y: 545), size: 10, kerning: 0)
 canvas.drawText(message: "Lincoln", at: Point(x: 300, y: 565), size: 10, kerning: 0)
@@ -185,7 +183,7 @@ canvas.drawText(message: "PHL, Pennsylvania", at: Point(x: 270, y: 545), size: 1
 canvas.drawText(message: "United States", at: Point(x: 285, y: 535), size: 10, kerning: 0)
 
 
-canvas.drawAxes(withScale: true, by: 20, color: .blue)
+
 /*:
  ## Show the Live View
  Don't see any results?
@@ -201,4 +199,4 @@ canvas.drawAxes(withScale: true, by: 20, color: .blue)
  
  ![source_control](source-control.png "Source Control")
  */
-}
+

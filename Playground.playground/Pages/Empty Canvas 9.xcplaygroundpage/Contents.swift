@@ -55,8 +55,10 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
-let scale = 20
+let scale = 10
+let lengthOfArrow = 5
 let diagonal = Int (sqrt(2.0) * Double(scale))
+
 
 // get into position
 // to start drawing
@@ -68,22 +70,47 @@ t.right(by: 90)
 //start drawing
 // arrow
 t.penDown()
-t.forward(steps: 3 * scale)
-t.right(by: 90)
-t.forward(steps: 1 * scale)
-t.left(by: 135)
-t.forward(steps: 2 * diagonal)
-t.left(by: 90)
-t.forward(steps: 2 * diagonal)
-t.left(by: 135)
-t.forward(steps: 1 * scale)
-t.right(by: 90)
-t.forward(steps: 3 * scale)
-t.left(by: 90)
-t.forward(steps: 2 * scale)
- 
-// turn right direction
-t.left(by: 90)
+func drawArrow (){
+    t.forward(steps: 3 * scale)
+    t.right(by: 90)
+    t.forward(steps: 1 * scale)
+    t.left(by: 135)
+    t.forward(steps: 2 * diagonal)
+    t.left(by: 90)
+    t.forward(steps: 2 * diagonal)
+    t.left(by: 135)
+    t.forward(steps: 1 * scale)
+    t.right(by: 90)
+    t.forward(steps: 3 * scale)
+    t.left(by: 90)
+    t.forward(steps: 2 * scale)
+     
+    // turn right direction
+    t.left(by: 90)
+
+}
+let rowRepeats = 10
+for _ in 1...6 {
+    for _ in 1...rowRepeats {
+        drawArrow()
+        t.penUp()
+        t.forward(steps: 5 * scale)
+        t.penDown()
+    }
+    // make more rows
+    t.currentPosition()
+    //move pen
+    t.penUp()
+    t.backward(steps: rowRepeats * lengthOfArrow * scale)
+    t.left(by: 90)
+    t.forward(steps: scale * 4)
+    t.right(by: 90)
+    t.penDown()
+}
+
+    
+
+
 /*:
  ## Show the Live View
  Don't see any results?

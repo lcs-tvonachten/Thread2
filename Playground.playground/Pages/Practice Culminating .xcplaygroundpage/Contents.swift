@@ -59,7 +59,6 @@ let scale = 10
 let lengthOfArrow = 5
 let diagonal = Int (sqrt(2.0) * Double(scale))
 
-
 // get into position
 // to start drawing
 t.penUp()
@@ -107,9 +106,9 @@ for _ in 1...6 {
     t.right(by: 90)
     t.penDown()
 }
+canvas.highPerformance = false
 
     
-
 
 /*:
  ## Show the Live View

@@ -21,7 +21,7 @@ import CanvasGraphics
 let canvas = Canvas(width: preferredWidth, height: preferredHeight)
 
 // Create a turtle that can draw upon the canvas
-let turtle = Tortoise(drawingUpon: canvas)
+let t = Tortoise(drawingUpon: canvas)
 
 // Create a pen that can draw upon the canvas
 let p = Pen(drawingUpon: canvas)
@@ -39,27 +39,46 @@ PlaygroundPage.current.liveView = canvas
  If you do not wish to see a grid, comment out the code on line 48.
  
  */
-
-// Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
-
-// Show a grid
 canvas.drawAxes(withScale: true, by: 20, color: .black)
-
-/*:
- ## Add your code
- 
- Beginning on line 61, you can add your own code.
-  
- [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
-
- */
+//PEN COLOR
+t.setPenColor(to: .black)
 
 // Begin writing your code below (you can remove the examples shown)
+canvas.highPerformance = true
+let scale = 20
 
-//Draw a grid
-canvas.drawAxes(withScale: true, by: 50, color: .black)
+
+// Squares for filling in
+func fillSquare () {
+    for _ in 1...scale/2 {
+        t.forward (steps: scale)
+        t.left(by: 90)
+        t.forward(steps: 1)
+        t.left(by: 90)
+        t.forward(steps: scale)
+        t.right(by: 90)
+        t.penUp()
+        t.forward(steps: 1)
+        t.right(by: 90)
+        t.penDown()
+        
+    }
+}
+
+// Fill figure
+func fillFigure() {
+    for _ in 1...4 {
+        fillSquare()
+        t.penUp()
+        t.right(by: 90)
+        t.forward(steps: scale)
+        t.left(by: 90)
+        t.penDown()
+        t.forward(steps: scale)
+    }
+}
+fillFigure()
+canvas.highPerformance = false
 /*:
  ## Show the Live View
  Don't see any results?

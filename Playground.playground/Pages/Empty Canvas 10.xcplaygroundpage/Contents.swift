@@ -149,6 +149,7 @@ func fillFigure() {
         
     }
 // set up for new row
+t.penUp()
 t.left(by: 90)
 t.forward(steps: 5 * scale)
 t.left(by: 90)
@@ -168,6 +169,7 @@ t.right(by: 180)
         
     }
 // set up for new row
+t.penUp()
 t.left(by: 90)
 t.forward(steps: 5 * scale)
 t.left(by: 90)
@@ -185,9 +187,69 @@ t.right(by: 180)
         t.penDown()
 
     }
+
+// set up for new row
+t.penUp()
+t.left(by: 90)
+t.forward(steps: 5 * scale)
+t.left(by: 90)
+t.forward(steps: 25 * scale)
+t.right(by: 180)
+
+// 4th row repeating
+    for _ in 1...3 {
+        fillFigure()
+        t.penUp()
+        t.forward(steps: 5 * scale)
+        t.right(by: 90)
+        t.forward(steps: 4 * scale)
+        t.left(by: 90)
+        t.penDown()
+        
+        
+    }
+// set up for new row
+t.penUp()
+t.left(by: 90)
+t.forward(steps: 5 * scale)
+t.left(by: 90)
+t.forward(steps: 35 * scale)
+t.right(by: 180)
+
+// 5th row repeating
+    for _ in 1...3 {
+        fillFigure()
+        t.penUp()
+        t.forward(steps: 5 * scale)
+        t.right(by: 90)
+        t.forward(steps: 4 * scale)
+        t.left(by: 90)
+        t.penDown()
+
+    }
+// set up for new row
+t.penUp()
+t.left(by: 90)
+t.forward(steps: 5 * scale)
+t.left(by: 90)
+t.forward(steps: 25 * scale)
+t.right(by: 180)
+
+// last row repeating
+    for _ in 1...3 {
+        fillFigure()
+        t.penUp()
+        t.forward(steps: 5 * scale)
+        t.right(by: 90)
+        t.forward(steps: 4 * scale)
+        t.left(by: 90)
+        t.penDown()
+        
+        
+    }
 t.currentPosition()
 t.currentHeading()
-t.drawSelf()
+
 
 canvas.highPerformance = false
 /*:

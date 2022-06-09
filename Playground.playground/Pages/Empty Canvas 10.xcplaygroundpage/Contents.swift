@@ -247,9 +247,46 @@ t.right(by: 180)
         
         
     }
+
+t.currentPosition()
+t.currentHeading()
+t.penUp()
+t.backward(steps: scale*35)
+t.right(by: 90)
+t.forward(steps: scale*26)
+t.left(by: 90)
+t.forward(steps: 4 * scale)
+t.penDown()
+
 t.currentPosition()
 t.currentHeading()
 
+// create 2nd figure
+func anotherFigure () {
+    fillSquare()
+    t.forward(steps: scale)
+    fillSquare()
+    t.penUp()
+    t.backward(steps: scale)
+    t.right(by: 90)
+    t.forward(steps: scale * 2)
+    t.left(by: 90)
+    t.penDown()
+    
+}
+anotherFigure()
+t.currentPosition()
+t.currentHeading()
+
+// move to draw next figure
+t.forward(steps: scale * 9)
+anotherFigure()
+
+
+
+
+
+t.currentPosition()
 
 canvas.highPerformance = false
 /*:

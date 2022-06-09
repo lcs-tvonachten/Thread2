@@ -47,7 +47,6 @@ t.setPenColor(to: .black)
 canvas.highPerformance = true
 let scale = 20
 
-
 // Squares for filling in
 func fillSquare () {
     for _ in 1...scale/2 {
@@ -274,17 +273,35 @@ func anotherFigure () {
     t.penDown()
     
 }
-anotherFigure()
-t.currentPosition()
-t.currentHeading()
+for _ in 1...4 {
+for _ in 1...3 {
+    anotherFigure()
+    t.penUp()
+    t.forward(steps: scale * 10 )
+    t.penDown()
+}
+        
+t.penUp()
+t.backward(steps: scale * 35)
+t.left(by: 90)
+t.forward(steps: 5 * scale)
+t.right(by: 90)
+t.penDown()
 
-// move to draw next figure
-t.forward(steps: scale * 9)
-anotherFigure()
+for _ in 1...4 {
+    anotherFigure()
+    t.penUp()
+    t.forward(steps: scale * 10 )
+    t.penDown()
+}
+t.penUp()
+t.backward(steps: 35 * scale)
+t.left(by: 90)
+t.forward(steps: scale * 5)
+t.right(by: 90)
+t.penDown()
 
-
-
-
+}
 
 t.currentPosition()
 

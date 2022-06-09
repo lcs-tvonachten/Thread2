@@ -49,7 +49,7 @@ let scale = 20
 
 // Squares for filling in
 func fillSquare () {
-    for _ in 1...scale/2 {
+    for i in 1...scale/2 {
         t.forward (steps: scale)
         t.left(by: 90)
         t.forward(steps: 1)
@@ -57,10 +57,15 @@ func fillSquare () {
         t.forward(steps: scale)
         t.right(by: 90)
         t.penUp()
+        t.penDown()
+        if i == scale / 2 {
+            t.penUp()
+        }
         t.forward(steps: 1)
         t.right(by: 90)
-        t.penDown()
-        
+        if i == scale / 2 {
+            t.penDown()
+        }
     }
 }
 
@@ -273,7 +278,7 @@ func anotherFigure () {
     t.penDown()
     
 }
-for _ in 1...4 {
+for _ in 1...3{
 for _ in 1...3 {
     anotherFigure()
     t.penUp()
@@ -302,7 +307,13 @@ t.right(by: 90)
 t.penDown()
 
 }
-
+// top row
+for _ in 1...3 {
+    anotherFigure()
+    t.penUp()
+    t.forward(steps: scale * 10 )
+    t.penDown()
+}
 t.currentPosition()
 
 canvas.highPerformance = false
